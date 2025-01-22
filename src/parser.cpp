@@ -46,7 +46,7 @@ PTQYolo8Config yolo8_config_ = {
     {{{10, 13}, {16, 30}, {33, 23}},
      {{30, 61}, {62, 45}, {59, 119}},
      {{116, 90}, {156, 198}, {373, 326}}},
-    80,
+    class_num_,
     {"blue_sentry_0", "blue_1", "blue_2", "blue_3", "blue_4","blue_5","blue_outpost_6", "blue_7", "blue_base_8",
     "red_sentry_0", "red_1", "red_2", "red_3", "red_4","red_5","red_outpost_6", "red_7", "red_base_8"}};
 
