@@ -8,7 +8,7 @@ Getting Started with rm armor detection demo
 
 The rm armor detection package is an example of using the Dnn Node package. By inheriting the DnnNode virtual base class, it utilizes the YOLOv8s-pose model and image data to perform algorithm inference on a BPU processor.
 
-The image data comes from subscribed image data messages, supporting image data (nv12 format) published using DaHeng cameras(MER-139-210U3C). After the inference is completed, a custom algorithm output parsing method is used to parse the algorithm's output tensor. Once parsed, the intelligent results are published, and real-time rendering effects can be viewed through a web interface.
+The image data comes from subscribed image data messages, supporting image data (nv12 format) published using DaHeng cameras. After the inference is completed, a custom algorithm output parsing method is used to parse the algorithm's output tensor. Once parsed, the intelligent results are published, and real-time rendering effects can be viewed through a web interface.
 
 # Development Environment
 
@@ -41,6 +41,7 @@ echo 1 >/sys/devices/system/cpu/cpufreq/boost
 echo performance >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
 #Run DaHeng camera
+#Link to camera code：https://github.com/wunuo1/RM
 ros2 run rm_camera_driver rm_camera_driver_node
 
 #Run detection node
@@ -54,6 +55,9 @@ ros2 launch rm_armor_detection rm_armor_detection.launch.py
 3. Starting the web display will result in a decrease in frame rate. Please ensure that the web display is not started during actual use
 4. Ensure normal heat dissipation of the board to avoid frame rate drop caused by high temperature
 5. The model was trained using an open-source dataset from the RM community, but due to some issues with the dataset itself, the performance was not particularly good. This case mainly verifies that there is no problem with the overall pathway, and provides rough results and actual data. It is recommended to train with a new dataset for practical use, or use other models for quantitative deployment through the RDK X5 quantization toolchain.
+
+## Detailed Introduction
+https://developer.d-robotics.cc/forumDetail/266441979142197469
 
 # Results Analysis
 

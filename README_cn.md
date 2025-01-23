@@ -8,7 +8,7 @@ Getting Started with rm armor detection demo
 
 rm_armor_detection package是Dnn Node package的使用示例，通过继承DnnNode虚基类，使用YOLOv8s-pose模型和图像数据利用BPU处理器进行算法推理。
 
-图像数据来源于订阅到的图像数据消息，支持使用大恒摄像头（MER-139-210U3C）发布的图像数据（nv12格式）；推理完成后，使用自定义的算法输出解析方法解析算法输出的tensor；解析完成后发布智能结果，可通过web查看实时的渲染效果。
+图像数据来源于订阅到的图像数据消息，支持使用大恒摄像头发布的图像数据（nv12格式）；推理完成后，使用自定义的算法输出解析方法解析算法输出的tensor；解析完成后发布智能结果，可通过web查看实时的渲染效果。
 
 # 开发环境
 
@@ -41,6 +41,7 @@ echo 1 >/sys/devices/system/cpu/cpufreq/boost
 echo performance >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
 #启动大恒摄像头
+#相机代码链接：https://github.com/wunuo1/RM
 ros2 run rm_camera_driver rm_camera_driver_node
 
 #启动检测节点
@@ -54,6 +55,9 @@ ros2 launch rm_armor_detection rm_armor_detection.launch.py
 3. 启动WEB展示将导致帧率下降，实际使用请确保web端展示未启动
 4. 保证板卡散热正常，避免因温度过高导致帧率下降
 5. 该模型使用RM社区开源数据集训练获得，由于数据集本身存在一些问题，效果没有特别好。该案例主要验证整体通路没有问题，并提供大致效果以及实际数据。实际使用建议用新的数据集进行训练，也可使用其他模型，通过RDK X5量化工具链进行量化部署。
+
+## 详细介绍
+https://developer.d-robotics.cc/forumDetail/266441979142197469
 
 # 结果分析
 
