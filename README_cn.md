@@ -46,6 +46,7 @@ ros2 run rm_camera_driver rm_camera_driver_node
 
 #启动检测节点
 #若需启动WEB端展示，则设置环境变量 export WEB_SHOW=TRUE。需注意启动显示后因编解码等功能运行，会导致帧率下降
+cp -r YOUR_WS/install/rm_armor_detection/lib/rm_armor_detection/config .
 ros2 launch rm_armor_detection rm_armor_detection.launch.py
 ```
 
