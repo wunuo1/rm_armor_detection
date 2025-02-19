@@ -46,6 +46,7 @@ ros2 run rm_camera_driver rm_camera_driver_node
 
 #Run detection node
 #If you need to start the WEB display, set the environment variable by 'export WEB_SHOW=TRUE'. Please note that after starting the display, running encoding and decoding functions may cause a decrease in frame rate
+cp -r YOUR_WS/install/rm_armor_detection/lib/rm_armor_detection/config .
 ros2 launch rm_armor_detection rm_armor_detection.launch.py
 ```
 
